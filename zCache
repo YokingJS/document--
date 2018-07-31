@@ -1,0 +1,6 @@
+之前介绍了packageApp,packageApp和zCache都是利用客户端缓存解决性能问题。
+
+一、zCache与packageApp关系
+  1、packageApp是基于应用包的客户端缓存方案。页面应用资源时采用相对方案引入（区别于正常的CND地址）。
+  2、zCache则是基于资源的缓存。采用正常CDN地址。（存在比如运用活动等很多场景，更适合采用zCache）
+  3、所以，当APP采用了packageApp同时部分页面又采用了zCache缓存。那么获取逻辑为：先从packageApp找，再去zCache中找，最后去网络中找。
